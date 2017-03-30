@@ -1,68 +1,75 @@
-import qualified Data.Tuple as Tuple
-import qualified Data.List as List
-import qualified Data.Set as Set
+
+import Prelude hiding (Word)
+import qualified Data.Tuple    as Tuple
+import qualified Data.List     as List
+import qualified Data.Set      as Set
+import qualified Data.Array    as Array
 import qualified Data.Foldable as Foldable
 import qualified Control.Arrow as Arrow
+
+type Letter = Int
+type Word = [Letter]
 
 {-|
   The 'frequencies' function returns the frequencies of the elements of the input
   list.
 -}
-frequencies :: [Char] -> [(Int, Char)]
+frequencies :: Word -> [(Int, Int)]
 frequencies = fmap (Foldable.length Arrow.&&& List.head) . List.group . List.sort
 
 {-|
   The 'evenParikh' function returns true iff each letter has an even number of
   occurrences.
 -}
-evenParikh :: [Char] -> Bool
+evenParikh :: Word -> Bool
 evenParikh = Foldable.all (even . Tuple.fst) . frequencies
 
-oddParikh :: [Char] -> Bool
+oddParikh :: Word -> Bool
 oddParikh = not . evenParikh
 
 {-|
   The 'balancedSplit' function cut a list into two balanced parts. In case the
   input list has odd length, the first part receives the extra element.
 -}
-balancedSplit :: [Char] -> ([Char], [Char])
+balancedSplit :: Word -> (Word, Word)
 balancedSplit xs = List.splitAt (List.length xs + 1 `div` 2) xs
 
 {-|
   The 'square' function returns true if the input list is a square
   (i.e., the first half list is equal to the second half list).
 -}
-isPerfectSquare :: [Char] -> Bool
+isPerfectSquare :: Word -> Bool
 isPerfectSquare xs = (even $ List.length xs) && Tuple.fst s == Tuple.snd s
   where
     s = balancedSplit xs
 
-isShuffleSquare :: [Char] -> Bool
+--isShuffleSquare :: Word -> Bool
 isShuffleSquare xs
   | odd n              = False
   | oddParikh xs       = False
   | isPerfectSquare xs = True
-  | otherwise          = isShuffleSquareAux n xs
+  | otherwise          = not . List.null $ shuffleSquares xs
   where
     n = List.length xs
 
-isShuffleSquareAux :: Int -> [Char] -> Bool
-isShuffleSquareAux n xs = not . Set.null $ Foldable.foldl f initSet (List.tail xs)
+shuffleSquares :: Word -> [Word]
+shuffleSquares []  = [[]]
+shuffleSquares [x] = []
+shuffleSquares xs  = shuffleSquaresAux 0 (n `div` 2) initialArray (List.tail xs)
   where
-    b       = n `div` 2
-    initSet = Set.singleton [List.head xs]
+    n            = List.length xs
+    initialArray = Array.listArray (0, 0) [Set.fromList [[List.head xs]]]
 
-    f :: Set.Set [Char] -> Char -> Set.Set [Char]
-    f acc x = Set.fromList $ Foldable.concat [g ys | ys <- Set.toList acc]
-      where
-        g ys
-          | x == List.last ys && m < b = [ys, ys ++ [x]]
-          | x == List.last ys          = [ys]
-          | m < b                      = [ys ++ [x]]
-          | otherwise                  = []
-          where
-            m = List.length ys
+shuffleSquaresAux :: Array.Ix i => Int -> i -> Array.Array i (Set.Set Word) -> Word -> [Word]
+shuffleSquaresAux _ b array []       = Set.toList $ array Array.! b
+shuffleSquaresAux i b array (x : xs) = shuffleSquaresAux (i+1) b array' xs
+  where
+    array' = shuffleSquaresAux' b array x
 
+shuffleSquaresAux' :: Array.Ix i => Int -> i -> Array.Array i (Set.Set Word) -> Letter -> Array.Array i (Set.Set Word)
+shuffleSquaresAux' i b array x = Array.listArray (0, i `div` 2) [f i | i <- [0..i `div` 2]]
+  where
+    f j =
 
     --     prev_array    = [None] * n
     --     current_array = [None] * n
