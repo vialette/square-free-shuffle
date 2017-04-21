@@ -2,6 +2,7 @@ module Main
 
 where
 
+  import System.IO
   import qualified Data.Tuple      as Tuple
   import qualified Data.List       as List
   import qualified Data.Set        as Set
@@ -185,6 +186,7 @@ where
                        show (Set.size forbidden') `Monoid.mappend`
                        "):\n"                     `Monoid.mappend`
                        show xs
+            hFlush stdout
             aux allowed' forbidden' $ forward xs
           else aux allowed' forbidden' $ backward alphabet xs
 
