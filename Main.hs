@@ -136,20 +136,9 @@ where
         where
           b = min ((i-1) `div` 2) (n `div` 2)
 
-  isSquareShuffleFree :: String -> Bool
-  isSquareShuffleFree = not . Foldable.any isShuffleSquare . evenLengthPrefixes
-
-  isSquareShuffleFreeF :: Dictionary -> Dictionary -> String -> (Bool, Dictionary, Dictionary)
-  isSquareShuffleFreeF allowed forbidden = isSquareShuffleFreeFAux allowed forbidden . evenLengthPrefixes
-
-  isSquareShuffleFreeFAux :: Dictionary -> Dictionary -> [String] -> (Bool, Dictionary, Dictionary)
-  isSquareShuffleFreeFAux allowed forbidden [] = (True, allowed, forbidden)
-  isSquareShuffleFreeFAux allowed forbidden (p : ps)
-    | Set.member p allowed   = isSquareShuffleFreeFAux allowed forbidden ps
-    | Set.member p forbidden = (False, allowed, forbidden)
-    | isShuffleSquare p      = (False, allowed, Set.insert (List.reverse p) $ Set.insert p forbidden)
-    | otherwise              = isSquareShuffleFreeFAux (Set.insert (List.reverse p) $ Set.insert p allowed) forbidden ps
-
+  {-|
+    Backtrack for next word.
+  -}
   backward :: Alphabet -> String -> String
   backward alphabet [] = []
   backward alphabet (x : xs) =
@@ -157,6 +146,9 @@ where
       Nothing -> backward alphabet xs
       Just x' -> x' : xs
 
+  {-|
+    Forward for next word.
+  -}
   forward :: String -> String
   forward xs = firstLetter : xs
 
@@ -170,6 +162,20 @@ where
           putStrLn $ show (List.length xs) `Monoid.mappend` ": " `Monoid.mappend` show xs
           aux $ forward xs
         else aux $ backward alphabet xs
+
+  isSquareShuffleFree :: String -> Bool
+  isSquareShuffleFree = not . Foldable.any isShuffleSquare . evenLengthPrefixes
+
+  isSquareShuffleFreeF :: Dictionary -> Dictionary -> String -> (Bool, Dictionary, Dictionary)
+  isSquareShuffleFreeF allowed forbidden = isSquareShuffleFreeFAux allowed forbidden . evenLengthPrefixes
+
+  isSquareShuffleFreeFAux :: Dictionary -> Dictionary -> [String] -> (Bool, Dictionary, Dictionary)
+  isSquareShuffleFreeFAux allowed forbidden [] = (True, allowed, forbidden)
+  isSquareShuffleFreeFAux allowed forbidden (p : ps)
+    | Set.member p allowed   = isSquareShuffleFreeFAux allowed forbidden ps
+    | Set.member p forbidden = (False, allowed, forbidden)
+    | isShuffleSquare p      = (False, allowed, Set.insert (List.reverse p) $ Set.insert p forbidden)
+    | otherwise              = isSquareShuffleFreeFAux (Set.insert (List.reverse p) $ Set.insert p allowed) forbidden ps
 
   exploreF :: Alphabet -> String -> IO ()
   exploreF alphabet = aux Set.empty Set.empty
