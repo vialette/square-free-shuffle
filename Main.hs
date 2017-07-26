@@ -17,6 +17,12 @@ where
 
   type Dictionary = Set.Set String
 
+  type CharArray = Array.Array Int Char
+  type DPSet     = Set.Set CharArray
+  type DPArray   = Array.Array Int DPSet
+
+  type Message = (Bool, Dictionary, Dictionary)
+
   mkAlphabet :: Int -> Alphabet
   mkAlphabet n
     | n <= 0    = Alphabet { getSize = 0 }
@@ -31,10 +37,13 @@ where
   nextLetter :: Alphabet -> Char -> Maybe Char
   nextLetter alphabet c
     | c < firstLetter          = Nothing
-    | c > lastLetter alphabet  = Nothing
-    | c == lastLetter alphabet = Nothing
+    | c >= lastLetter alphabet = Nothing
     | otherwise                = Just $ Char.chr ((1 + Char.ord c - Char.ord 'a') + Char.ord 'a')
 
+  {-|
+    The 'evenLengthPrefixes xs' function returns the list of all even length prefixes
+    of 'xs'.
+  -}
   evenLengthPrefixes :: String -> [String]
   evenLengthPrefixes [] = []
   evenLengthPrefixes xs = fmap Tuple.snd . List.filter (even . Tuple.fst) . List.zip [1..] . List.tail $ List.inits xs
@@ -81,7 +90,9 @@ where
     w.r.t. to the shufle product.
   -}
   isShuffleSquare :: String -> Bool
-  isShuffleSquare = not . List.null . shuffleSquareRoots
+  isShuffleSquare xs
+    | isPerfectSquare xs = True
+    | otherwise          = not . List.null $ shuffleSquareRoots xs
 
   {-|
     The 'shuffleSquareRoots' function returns the list of the shuffle square
@@ -91,7 +102,6 @@ where
   shuffleSquareRoots xs
     | odd n              = []
     | oddParikh xs       = []
-    -- | isPerfectSquare xs = ["perfect"]
     | otherwise          = shuffleSquareRootsAux a n
     where
       n = List.length xs
@@ -103,14 +113,14 @@ where
       a' = Array.array (0, 0) [(0, a Array.! 0)]
       t  = Array.array (0, 0) [(0, Set.singleton a')]
 
-  shuffleSquareRootsStep :: Int -> Array.Array Int Char -> Int -> Array.Array Int (Set.Set (Array.Array Int Char)) -> [String]
+  shuffleSquareRootsStep :: Int -> Array.Array Int Char -> Int -> DPArray -> [String]
   shuffleSquareRootsStep i a n t
     | i > n     = fmap Array.elems . Set.toList $ t Array.! (n `div` 2)
     | otherwise = shuffleSquareRootsStep (i+1) a n t'
     where
       t' = mkArrayshuffleSquareRootsStep i a n t
 
-  mkArrayshuffleSquareRootsStep :: Int -> Array.Array Int Char -> Int -> Array.Array Int (Set.Set (Array.Array Int Char)) -> Array.Array Int (Set.Set (Array.Array Int Char))
+  mkArrayshuffleSquareRootsStep :: Int -> Array.Array Int Char -> Int -> DPArray -> DPArray
   mkArrayshuffleSquareRootsStep i a n t = Array.array (lb, ub) assocs
     where
       lb     = max 0 (i - (n `div` 2))
@@ -152,24 +162,24 @@ where
   forward :: String -> String
   forward xs = firstLetter : xs
 
-  explore :: Alphabet -> String -> IO ()
-  explore alphabet = aux
-    where
-      aux [] = print "done."
-      aux xs =
-        if isSquareShuffleFree xs
-        then do
-          putStrLn $ show (List.length xs) `Monoid.mappend` ": " `Monoid.mappend` show xs
-          aux $ forward xs
-        else aux $ backward alphabet xs
+  -- explore :: Alphabet -> String -> IO ()
+  -- explore alphabet = aux
+  --   where
+  --     aux [] = print "done."
+  --     aux xs =
+  --       if isSquareShuffleFree xs
+  --       then do
+  --         putStrLn $ show (List.length xs) `Monoid.mappend` ": " `Monoid.mappend` show xs
+  --         aux $ forward xs
+  --       else aux $ backward alphabet xs
+  --
+  -- isSquareShuffleFree :: String -> Bool
+  -- isSquareShuffleFree = not . Foldable.any isShuffleSquare . evenLengthPrefixes
 
-  isSquareShuffleFree :: String -> Bool
-  isSquareShuffleFree = not . Foldable.any isShuffleSquare . evenLengthPrefixes
-
-  isSquareShuffleFreeF :: Dictionary -> Dictionary -> String -> (Bool, Dictionary, Dictionary)
+  isSquareShuffleFreeF :: Dictionary -> Dictionary -> String -> Message
   isSquareShuffleFreeF allowed forbidden = isSquareShuffleFreeFAux allowed forbidden . evenLengthPrefixes
 
-  isSquareShuffleFreeFAux :: Dictionary -> Dictionary -> [String] -> (Bool, Dictionary, Dictionary)
+  isSquareShuffleFreeFAux :: Dictionary -> Dictionary -> [String] -> Message
   isSquareShuffleFreeFAux allowed forbidden [] = (True, allowed, forbidden)
   isSquareShuffleFreeFAux allowed forbidden (p : ps)
     | Set.member p allowed   = isSquareShuffleFreeFAux allowed forbidden ps
