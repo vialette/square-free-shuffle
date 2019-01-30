@@ -1,0 +1,475 @@
+1. (allow: 0, forbidden: 0):
+"a"
+2. (allow: 2, forbidden: 1):
+"ba"
+3. (allow: 2, forbidden: 1):
+"aba"
+4. (allow: 6, forbidden: 3):
+"caba"
+5. (allow: 8, forbidden: 3):
+"acaba"
+6. (allow: 10, forbidden: 3):
+"bacaba"
+7. (allow: 10, forbidden: 3):
+"abacaba"
+7. (allow: 18, forbidden: 6):
+"cbacaba"
+5. (allow: 26, forbidden: 13):
+"bcaba"
+6. (allow: 28, forbidden: 13):
+"abcaba"
+7. (allow: 32, forbidden: 13):
+"babcaba"
+8. (allow: 36, forbidden: 13):
+"cbabcaba"
+9. (allow: 38, forbidden: 13):
+"acbabcaba"
+3. (allow: 44, forbidden: 23):
+"cba"
+4. (allow: 44, forbidden: 23):
+"acba"
+5. (allow: 44, forbidden: 23):
+"bacba"
+6. (allow: 44, forbidden: 23):
+"abacba"
+7. (allow: 46, forbidden: 23):
+"cabacba"
+8. (allow: 48, forbidden: 25):
+"bcabacba"
+9. (allow: 48, forbidden: 25):
+"abcabacba"
+5. (allow: 50, forbidden: 29):
+"cacba"
+6. (allow: 52, forbidden: 29):
+"bcacba"
+7. (allow: 52, forbidden: 29):
+"abcacba"
+8. (allow: 56, forbidden: 29):
+"cabcacba"
+9. (allow: 58, forbidden: 29):
+"acabcacba"
+10. (allow: 62, forbidden: 29):
+"bacabcacba"
+11. (allow: 66, forbidden: 29):
+"cbacabcacba"
+7. (allow: 68, forbidden: 33):
+"cbcacba"
+8. (allow: 72, forbidden: 33):
+"acbcacba"
+9. (allow: 76, forbidden: 33):
+"bacbcacba"
+4. (allow: 78, forbidden: 39):
+"bcba"
+5. (allow: 78, forbidden: 39):
+"abcba"
+6. (allow: 80, forbidden: 39):
+"babcba"
+7. (allow: 80, forbidden: 39):
+"cbabcba"
+8. (allow: 82, forbidden: 39):
+"acbabcba"
+6. (allow: 84, forbidden: 41):
+"cabcba"
+7. (allow: 86, forbidden: 41):
+"bcabcba"
+8. (allow: 88, forbidden: 41):
+"cbcabcba"
+9. (allow: 90, forbidden: 41):
+"acbcabcba"
+10. (allow: 94, forbidden: 41):
+"bacbcabcba"
+2. (allow: 94, forbidden: 43):
+"ca"
+3. (allow: 94, forbidden: 43):
+"aca"
+4. (allow: 94, forbidden: 43):
+"baca"
+5. (allow: 94, forbidden: 43):
+"abaca"
+6. (allow: 94, forbidden: 43):
+"cabaca"
+7. (allow: 94, forbidden: 43):
+"acabaca"
+7. (allow: 94, forbidden: 45):
+"bcabaca"
+5. (allow: 94, forbidden: 45):
+"cbaca"
+6. (allow: 94, forbidden: 45):
+"acbaca"
+7. (allow: 94, forbidden: 45):
+"cacbaca"
+8. (allow: 94, forbidden: 45):
+"bcacbaca"
+9. (allow: 94, forbidden: 45):
+"abcacbaca"
+3. (allow: 94, forbidden: 49):
+"bca"
+4. (allow: 94, forbidden: 49):
+"abca"
+5. (allow: 94, forbidden: 49):
+"babca"
+6. (allow: 94, forbidden: 49):
+"cbabca"
+7. (allow: 94, forbidden: 49):
+"acbabca"
+8. (allow: 94, forbidden: 49):
+"bacbabca"
+9. (allow: 94, forbidden: 49):
+"abacbabca"
+10. (allow: 96, forbidden: 49):
+"cabacbabca"
+11. (allow: 98, forbidden: 49):
+"bcabacbabca"
+7. (allow: 98, forbidden: 49):
+"bcbabca"
+8. (allow: 98, forbidden: 49):
+"abcbabca"
+9. (allow: 100, forbidden: 51):
+"cabcbabca"
+5. (allow: 100, forbidden: 53):
+"cabca"
+6. (allow: 100, forbidden: 53):
+"acabca"
+7. (allow: 100, forbidden: 53):
+"bacabca"
+8. (allow: 100, forbidden: 53):
+"cbacabca"
+9. (allow: 100, forbidden: 53):
+"acbacabca"
+4. (allow: 100, forbidden: 53):
+"cbca"
+5. (allow: 100, forbidden: 53):
+"acbca"
+6. (allow: 100, forbidden: 53):
+"bacbca"
+7. (allow: 100, forbidden: 53):
+"cbacbca"
+8. (allow: 100, forbidden: 53):
+"bcbacbca"
+9. (allow: 100, forbidden: 53):
+"abcbacbca"
+10. (allow: 104, forbidden: 53):
+"cabcbacbca"
+6. (allow: 104, forbidden: 55):
+"cacbca"
+7. (allow: 104, forbidden: 55):
+"bcacbca"
+8. (allow: 104, forbidden: 55):
+"abcacbca"
+1. (allow: 104, forbidden: 57):
+"b"
+2. (allow: 104, forbidden: 57):
+"ab"
+3. (allow: 104, forbidden: 57):
+"bab"
+4. (allow: 104, forbidden: 57):
+"cbab"
+5. (allow: 104, forbidden: 57):
+"acbab"
+6. (allow: 104, forbidden: 57):
+"bacbab"
+7. (allow: 104, forbidden: 57):
+"abacbab"
+8. (allow: 104, forbidden: 57):
+"cabacbab"
+9. (allow: 104, forbidden: 57):
+"bcabacbab"
+5. (allow: 104, forbidden: 57):
+"bcbab"
+6. (allow: 104, forbidden: 57):
+"abcbab"
+7. (allow: 104, forbidden: 57):
+"babcbab"
+7. (allow: 104, forbidden: 57):
+"cabcbab"
+3. (allow: 104, forbidden: 57):
+"cab"
+4. (allow: 104, forbidden: 57):
+"acab"
+5. (allow: 104, forbidden: 57):
+"bacab"
+6. (allow: 104, forbidden: 57):
+"abacab"
+7. (allow: 104, forbidden: 57):
+"cabacab"
+8. (allow: 106, forbidden: 57):
+"bcabacab"
+6. (allow: 106, forbidden: 57):
+"cbacab"
+7. (allow: 106, forbidden: 57):
+"acbacab"
+8. (allow: 106, forbidden: 57):
+"cacbacab"
+9. (allow: 106, forbidden: 57):
+"bcacbacab"
+10. (allow: 106, forbidden: 57):
+"abcacbacab"
+4. (allow: 106, forbidden: 57):
+"bcab"
+5. (allow: 106, forbidden: 57):
+"abcab"
+6. (allow: 106, forbidden: 57):
+"babcab"
+7. (allow: 106, forbidden: 57):
+"cbabcab"
+8. (allow: 106, forbidden: 57):
+"acbabcab"
+9. (allow: 106, forbidden: 57):
+"bacbabcab"
+5. (allow: 106, forbidden: 57):
+"cbcab"
+6. (allow: 106, forbidden: 57):
+"acbcab"
+7. (allow: 106, forbidden: 57):
+"bacbcab"
+8. (allow: 106, forbidden: 57):
+"cbacbcab"
+9. (allow: 106, forbidden: 57):
+"bcbacbcab"
+10. (allow: 106, forbidden: 57):
+"abcbacbcab"
+11. (allow: 106, forbidden: 57):
+"cabcbacbcab"
+7. (allow: 106, forbidden: 57):
+"cacbcab"
+8. (allow: 106, forbidden: 57):
+"bcacbcab"
+9. (allow: 106, forbidden: 57):
+"abcacbcab"
+2. (allow: 106, forbidden: 57):
+"cb"
+3. (allow: 106, forbidden: 57):
+"acb"
+4. (allow: 106, forbidden: 57):
+"bacb"
+5. (allow: 106, forbidden: 57):
+"abacb"
+6. (allow: 106, forbidden: 57):
+"cabacb"
+7. (allow: 106, forbidden: 57):
+"acabacb"
+8. (allow: 106, forbidden: 57):
+"bacabacb"
+9. (allow: 108, forbidden: 57):
+"cbacabacb"
+7. (allow: 108, forbidden: 57):
+"bcabacb"
+8. (allow: 108, forbidden: 57):
+"abcabacb"
+9. (allow: 108, forbidden: 57):
+"babcabacb"
+10. (allow: 108, forbidden: 57):
+"cbabcabacb"
+11. (allow: 108, forbidden: 57):
+"acbabcabacb"
+5. (allow: 108, forbidden: 57):
+"cbacb"
+6. (allow: 108, forbidden: 57):
+"bcbacb"
+7. (allow: 108, forbidden: 57):
+"abcbacb"
+8. (allow: 108, forbidden: 57):
+"cabcbacb"
+9. (allow: 108, forbidden: 57):
+"bcabcbacb"
+4. (allow: 108, forbidden: 57):
+"cacb"
+5. (allow: 108, forbidden: 57):
+"bcacb"
+6. (allow: 108, forbidden: 57):
+"abcacb"
+7. (allow: 108, forbidden: 57):
+"cabcacb"
+8. (allow: 108, forbidden: 57):
+"acabcacb"
+9. (allow: 108, forbidden: 57):
+"bacabcacb"
+10. (allow: 108, forbidden: 57):
+"cbacabcacb"
+6. (allow: 108, forbidden: 57):
+"cbcacb"
+7. (allow: 108, forbidden: 57):
+"acbcacb"
+8. (allow: 108, forbidden: 57):
+"bacbcacb"
+3. (allow: 108, forbidden: 57):
+"bcb"
+4. (allow: 108, forbidden: 57):
+"abcb"
+5. (allow: 108, forbidden: 57):
+"babcb"
+6. (allow: 108, forbidden: 57):
+"cbabcb"
+7. (allow: 108, forbidden: 57):
+"acbabcb"
+7. (allow: 108, forbidden: 57):
+"bcbabcb"
+5. (allow: 108, forbidden: 57):
+"cabcb"
+6. (allow: 108, forbidden: 57):
+"bcabcb"
+7. (allow: 108, forbidden: 57):
+"cbcabcb"
+8. (allow: 108, forbidden: 57):
+"acbcabcb"
+9. (allow: 108, forbidden: 57):
+"bacbcabcb"
+1. (allow: 108, forbidden: 57):
+"c"
+2. (allow: 108, forbidden: 57):
+"ac"
+3. (allow: 108, forbidden: 57):
+"bac"
+4. (allow: 108, forbidden: 57):
+"abac"
+5. (allow: 108, forbidden: 57):
+"cabac"
+6. (allow: 108, forbidden: 57):
+"acabac"
+7. (allow: 108, forbidden: 57):
+"bacabac"
+8. (allow: 108, forbidden: 57):
+"cbacabac"
+6. (allow: 108, forbidden: 57):
+"bcabac"
+7. (allow: 108, forbidden: 57):
+"abcabac"
+8. (allow: 108, forbidden: 57):
+"babcabac"
+9. (allow: 108, forbidden: 57):
+"cbabcabac"
+10. (allow: 108, forbidden: 57):
+"acbabcabac"
+4. (allow: 108, forbidden: 57):
+"cbac"
+5. (allow: 108, forbidden: 57):
+"acbac"
+6. (allow: 108, forbidden: 57):
+"cacbac"
+7. (allow: 108, forbidden: 57):
+"bcacbac"
+8. (allow: 108, forbidden: 57):
+"abcacbac"
+9. (allow: 108, forbidden: 57):
+"cabcacbac"
+5. (allow: 108, forbidden: 57):
+"bcbac"
+6. (allow: 108, forbidden: 57):
+"abcbac"
+7. (allow: 108, forbidden: 57):
+"babcbac"
+8. (allow: 108, forbidden: 57):
+"cbabcbac"
+9. (allow: 108, forbidden: 57):
+"acbabcbac"
+7. (allow: 108, forbidden: 57):
+"cabcbac"
+8. (allow: 108, forbidden: 57):
+"bcabcbac"
+9. (allow: 108, forbidden: 57):
+"cbcabcbac"
+10. (allow: 108, forbidden: 57):
+"acbcabcbac"
+11. (allow: 108, forbidden: 57):
+"bacbcabcbac"
+3. (allow: 108, forbidden: 57):
+"cac"
+4. (allow: 108, forbidden: 57):
+"bcac"
+5. (allow: 108, forbidden: 57):
+"abcac"
+6. (allow: 108, forbidden: 57):
+"cabcac"
+7. (allow: 108, forbidden: 57):
+"acabcac"
+8. (allow: 108, forbidden: 57):
+"bacabcac"
+9. (allow: 108, forbidden: 57):
+"cbacabcac"
+5. (allow: 108, forbidden: 57):
+"cbcac"
+6. (allow: 108, forbidden: 57):
+"acbcac"
+7. (allow: 108, forbidden: 57):
+"bacbcac"
+7. (allow: 108, forbidden: 57):
+"cacbcac"
+2. (allow: 108, forbidden: 57):
+"bc"
+3. (allow: 108, forbidden: 57):
+"abc"
+4. (allow: 108, forbidden: 57):
+"babc"
+5. (allow: 108, forbidden: 57):
+"cbabc"
+6. (allow: 108, forbidden: 57):
+"acbabc"
+7. (allow: 108, forbidden: 57):
+"bacbabc"
+8. (allow: 108, forbidden: 57):
+"abacbabc"
+9. (allow: 108, forbidden: 57):
+"cabacbabc"
+10. (allow: 108, forbidden: 57):
+"bcabacbabc"
+6. (allow: 108, forbidden: 57):
+"bcbabc"
+7. (allow: 108, forbidden: 57):
+"abcbabc"
+8. (allow: 108, forbidden: 57):
+"cabcbabc"
+4. (allow: 108, forbidden: 57):
+"cabc"
+5. (allow: 108, forbidden: 57):
+"acabc"
+6. (allow: 108, forbidden: 57):
+"bacabc"
+7. (allow: 108, forbidden: 57):
+"abacabc"
+8. (allow: 108, forbidden: 57):
+"cabacabc"
+9. (allow: 108, forbidden: 57):
+"bcabacabc"
+7. (allow: 108, forbidden: 57):
+"cbacabc"
+8. (allow: 108, forbidden: 57):
+"acbacabc"
+9. (allow: 108, forbidden: 57):
+"cacbacabc"
+10. (allow: 108, forbidden: 57):
+"bcacbacabc"
+11. (allow: 108, forbidden: 57):
+"abcacbacabc"
+5. (allow: 108, forbidden: 57):
+"bcabc"
+6. (allow: 108, forbidden: 57):
+"cbcabc"
+7. (allow: 108, forbidden: 57):
+"acbcabc"
+8. (allow: 108, forbidden: 57):
+"bacbcabc"
+9. (allow: 108, forbidden: 57):
+"cbacbcabc"
+3. (allow: 108, forbidden: 57):
+"cbc"
+4. (allow: 108, forbidden: 57):
+"acbc"
+5. (allow: 108, forbidden: 57):
+"bacbc"
+6. (allow: 108, forbidden: 57):
+"cbacbc"
+7. (allow: 108, forbidden: 57):
+"bcbacbc"
+8. (allow: 108, forbidden: 57):
+"abcbacbc"
+9. (allow: 108, forbidden: 57):
+"cabcbacbc"
+5. (allow: 108, forbidden: 57):
+"cacbc"
+6. (allow: 108, forbidden: 57):
+"bcacbc"
+7. (allow: 108, forbidden: 57):
+"abcacbc"
+7. (allow: 108, forbidden: 57):
+"cbcacbc"
+"done."

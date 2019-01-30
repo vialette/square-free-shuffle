@@ -1,0 +1,276 @@
+1. (allow: 0, forbidden: 0):
+"a"
+2. (allow: 2, forbidden: 1):
+"ba"
+3. (allow: 2, forbidden: 1):
+"aba"
+4. (allow: 6, forbidden: 3):
+"caba"
+5. (allow: 8, forbidden: 3):
+"acaba"
+6. (allow: 10, forbidden: 3):
+"bacaba"
+7. (allow: 10, forbidden: 3):
+"abacaba"
+8. (allow: 20, forbidden: 5):
+"dabacaba"
+9. (allow: 26, forbidden: 5):
+"adabacaba"
+10. (allow: 32, forbidden: 5):
+"badabacaba"
+11. (allow: 36, forbidden: 5):
+"abadabacaba"
+12. (allow: 40, forbidden: 5):
+"cabadabacaba"
+13. (allow: 42, forbidden: 5):
+"acabadabacaba"
+14. (allow: 44, forbidden: 5):
+"bacabadabacaba"
+15. (allow: 44, forbidden: 5):
+"abacabadabacaba"
+15. (allow: 64, forbidden: 8):
+"cbacabadabacaba"
+16. (allow: 86, forbidden: 13):
+"dcbacabadabacaba"
+17. (allow: 100, forbidden: 13):
+"adcbacabadabacaba"
+18. (allow: 116, forbidden: 13):
+"badcbacabadabacaba"
+19. (allow: 130, forbidden: 13):
+"abadcbacabadabacaba"
+20. (allow: 158, forbidden: 15):
+"dabadcbacabadabacaba"
+21. (allow: 182, forbidden: 17):
+"bdabadcbacabadabacaba"
+22. (allow: 212, forbidden: 19):
+"cbdabadcbacabadabacaba"
+23. (allow: 232, forbidden: 19):
+"acbdabadcbacabadabacaba"
+24. (allow: 254, forbidden: 19):
+"bacbdabadcbacabadabacaba"
+25. (allow: 274, forbidden: 19):
+"abacbdabadcbacabadabacaba"
+26. (allow: 296, forbidden: 19):
+"cabacbdabadcbacabadabacaba"
+27. (allow: 324, forbidden: 21):
+"bcabacbdabadcbacabadabacaba"
+28. (allow: 360, forbidden: 25):
+"dbcabacbdabadcbacabadabacaba"
+29. (allow: 378, forbidden: 25):
+"adbcabacbdabadcbacabadabacaba"
+30. (allow: 396, forbidden: 25):
+"badbcabacbdabadcbacabadabacaba"
+31. (allow: 412, forbidden: 25):
+"abadbcabacbdabadcbacabadabacaba"
+32. (allow: 440, forbidden: 25):
+"cabadbcabacbdabadcbacabadabacaba"
+33. (allow: 466, forbidden: 25):
+"acabadbcabacbdabadcbacabadabacaba"
+34. (allow: 524, forbidden: 29):
+"dacabadbcabacbdabadcbacabadabacaba"
+35. (allow: 556, forbidden: 29):
+"adacabadbcabacbdabadcbacabadabacaba"
+36. (allow: 588, forbidden: 29):
+"badacabadbcabacbdabadcbacabadabacaba"
+37. (allow: 630, forbidden: 31):
+"cbadacabadbcabacbdabadcbacabadabacaba"
+38. (allow: 688, forbidden: 33):
+"bcbadacabadbcabacbdabadcbacabadabacaba"
+39. (allow: 722, forbidden: 33):
+"abcbadacabadbcabacbdabadcbacabadabacaba"
+40. (allow: 786, forbidden: 35):
+"cabcbadacabadbcabacbdabadcbacabadabacaba"
+41. (allow: 836, forbidden: 37):
+"dcabcbadacabadbcabacbdabadcbacabadabacaba"
+42. (allow: 912, forbidden: 39):
+"bdcabcbadacabadbcabacbdabadcbacabadabacaba"
+43. (allow: 952, forbidden: 39):
+"abdcabcbadacabadbcabacbdabadcbacabadabacaba"
+44. (allow: 1032, forbidden: 41):
+"cabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+45. (allow: 1072, forbidden: 41):
+"acabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+46. (allow: 1114, forbidden: 41):
+"bacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+47. (allow: 1154, forbidden: 41):
+"abacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+48. (allow: 1234, forbidden: 43):
+"dabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+49. (allow: 1302, forbidden: 45):
+"bdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+50. (allow: 1378, forbidden: 47):
+"cbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+51. (allow: 1418, forbidden: 47):
+"acbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+52. (allow: 1460, forbidden: 47):
+"bacbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+51. (allow: 1680, forbidden: 57):
+"bcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+52. (allow: 1728, forbidden: 57):
+"abcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+53. (allow: 1776, forbidden: 57):
+"babcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+54. (allow: 1866, forbidden: 59):
+"dbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+55. (allow: 1916, forbidden: 59):
+"adbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+56. (allow: 2018, forbidden: 61):
+"cadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+57. (allow: 2070, forbidden: 61):
+"acadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+58. (allow: 2124, forbidden: 61):
+"bacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+59. (allow: 2176, forbidden: 61):
+"abacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+60. (allow: 2280, forbidden: 63):
+"dabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+61. (allow: 2374, forbidden: 65):
+"bdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+62. (allow: 2428, forbidden: 65):
+"abdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+63. (allow: 2530, forbidden: 67):
+"cabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+64. (allow: 2590, forbidden: 67):
+"acabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+64. (allow: 2714, forbidden: 71):
+"bcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+65. (allow: 2774, forbidden: 71):
+"abcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+65. (allow: 2948, forbidden: 79):
+"dbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+66. (allow: 3068, forbidden: 81):
+"bdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+67. (allow: 3132, forbidden: 81):
+"abdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+67. (allow: 3288, forbidden: 87):
+"cbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+68. (allow: 3350, forbidden: 87):
+"acbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+69. (allow: 3468, forbidden: 89):
+"cacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+70. (allow: 3598, forbidden: 91):
+"dcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+71. (allow: 3664, forbidden: 91):
+"adcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+72. (allow: 3732, forbidden: 91):
+"badcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+73. (allow: 3882, forbidden: 95):
+"dbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+74. (allow: 4020, forbidden: 99):
+"cdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+75. (allow: 4090, forbidden: 99):
+"acdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+76. (allow: 4160, forbidden: 99):
+"bacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+77. (allow: 4232, forbidden: 99):
+"abacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+78. (allow: 4306, forbidden: 99):
+"cabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+79. (allow: 4380, forbidden: 101):
+"bcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+80. (allow: 4524, forbidden: 103):
+"dbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+81. (allow: 4596, forbidden: 103):
+"adbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+82. (allow: 4670, forbidden: 103):
+"badbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+83. (allow: 4742, forbidden: 103):
+"abadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+84. (allow: 4816, forbidden: 103):
+"cabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+85. (allow: 4992, forbidden: 107):
+"dcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+86. (allow: 5124, forbidden: 109):
+"bdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+87. (allow: 5212, forbidden: 111):
+"cbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+88. (allow: 5296, forbidden: 111):
+"acbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+89. (allow: 5470, forbidden: 115):
+"dacbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+88. (allow: 5654, forbidden: 122):
+"bcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+89. (allow: 5820, forbidden: 126):
+"dbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+90. (allow: 5906, forbidden: 126):
+"adbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+91. (allow: 5990, forbidden: 126):
+"badbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+90. (allow: 6392, forbidden: 138):
+"cdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+91. (allow: 6474, forbidden: 138):
+"acdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+92. (allow: 6556, forbidden: 138):
+"bacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+93. (allow: 6718, forbidden: 142):
+"dbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+94. (allow: 6810, forbidden: 144):
+"bdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+95. (allow: 6900, forbidden: 144):
+"abdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+96. (allow: 7084, forbidden: 148):
+"dabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+97. (allow: 7226, forbidden: 152):
+"cdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+98. (allow: 7318, forbidden: 152):
+"acdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+99. (allow: 7412, forbidden: 152):
+"bacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+100. (allow: 7518, forbidden: 154):
+"cbacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+101. (allow: 7672, forbidden: 158):
+"dcbacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+102. (allow: 7862, forbidden: 160):
+"bdcbacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+99. (allow: 8270, forbidden: 170):
+"dacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+100. (allow: 8460, forbidden: 172):
+"bdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+101. (allow: 8564, forbidden: 174):
+"cbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+102. (allow: 8662, forbidden: 174):
+"acbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+101. (allow: 8884, forbidden: 184):
+"dbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+102. (allow: 9066, forbidden: 188):
+"cdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+103. (allow: 9222, forbidden: 190):
+"bcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+104. (allow: 9320, forbidden: 190):
+"abcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+105. (allow: 9478, forbidden: 192):
+"cabcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+103. (allow: 9860, forbidden: 204):
+"dcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+104. (allow: 9962, forbidden: 204):
+"adcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+105. (allow: 10062, forbidden: 204):
+"badcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+106. (allow: 10170, forbidden: 206):
+"cbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+107. (allow: 10272, forbidden: 206):
+"acbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+108. (allow: 10384, forbidden: 210):
+"dacbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+109. (allow: 10488, forbidden: 210):
+"adacbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+109. (allow: 10752, forbidden: 216):
+"bdacbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+110. (allow: 10928, forbidden: 218):
+"cbdacbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+107. (allow: 11372, forbidden: 230):
+"dcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+108. (allow: 11568, forbidden: 234):
+"cdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+109. (allow: 11674, forbidden: 234):
+"acdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+110. (allow: 11780, forbidden: 234):
+"bacdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+111. (allow: 11886, forbidden: 234):
+"abacdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+112. (allow: 12062, forbidden: 236):
+"dabacdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+113. (allow: 12268, forbidden: 238):
+"bdabacdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"
+114. (allow: 12376, forbidden: 238):
+"abdabacdcbadcdbdacdabdbacdbcbdcabadbcabacdbadcacbdbcabdabacadbabcbdabacabdcabcbadacabadbcabacbdabadcbacabadabacaba"

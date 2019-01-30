@@ -3,10 +3,10 @@ module Main
 where
 
   import System.IO
-  import qualified Data.Tuple      as Tuple
-  import qualified Data.List       as List
-  import qualified Data.Set        as Set
-  import qualified Data.Foldable   as Foldable
+  import qualified Data.Tuple      as T
+  import qualified Data.List       as L
+  import qualified Data.Set        as S
+  import qualified Data.Foldable   as F
   import qualified Data.Array      as Array
   import qualified Data.Monoid     as Monoid
   import qualified Data.Char       as Char
@@ -15,107 +15,70 @@ where
 
   newtype Alphabet = Alphabet { getSize :: Int }
 
-  type Dictionary = Set.Set String
+  type Dictionary = S.Set String
 
   type CharArray = Array.Array Int Char
-  type DPSet     = Set.Set CharArray
+  type DPSet     = S.Set CharArray
   type DPArray   = Array.Array Int DPSet
 
   type Message = (Bool, Dictionary, Dictionary)
 
+  -- Make an alphabet of given size.
   mkAlphabet :: Int -> Alphabet
   mkAlphabet n
     | n <= 0    = Alphabet { getSize = 0 }
     | otherwise = Alphabet { getSize = n }
 
-  firstLetter :: Char
-  firstLetter = 'a'
+  -- Return the first letter of the alphabet.
+  firstChar :: Char
+  firstChar = 'a'
 
-  lastLetter :: Alphabet -> Char
-  lastLetter Alphabet { getSize = s } = Char.chr $ Char.ord 'a' + (s-1)
+  -- Return the last letter of the alphabet.
+  lastChar :: Alphabet -> Char
+  lastChar Alphabet { getSize = s } = Char.chr $ Char.ord 'a' + (s-1)
 
+  -- Return the next letter.
   nextLetter :: Alphabet -> Char -> Maybe Char
   nextLetter alphabet c
-    | c < firstLetter          = Nothing
-    | c >= lastLetter alphabet = Nothing
-    | otherwise                = Just $ Char.chr ((1 + Char.ord c - Char.ord 'a') + Char.ord 'a')
+    | c < firstChar          = Nothing
+    | c >= lastChar alphabet = Nothing
+    | otherwise              = Just $ Char.chr ((1 + Char.ord c - Char.ord 'a') + Char.ord 'a')
 
-  {-|
-    The 'evenLengthPrefixes xs' function returns the list of all even length prefixes
-    of 'xs'.
-  -}
-  evenLengthPrefixes :: String -> [String]
-  evenLengthPrefixes [] = []
-  evenLengthPrefixes xs = fmap Tuple.snd . List.filter (even . Tuple.fst) . List.zip [1..] . List.tail $ List.inits xs
+  -- Return the list of all even length prefixes of 'xs'.
+  evenPrefixes :: String -> [String]
+  evenPrefixes = fmap T.snd . L.filter (even . T.fst) . L.zip [1..] . L.tail . L.inits
 
-  {-|
-    The 'frequencies' function returns the frequencies of the elements of the input
-    list.
-  -}
-  frequencies :: String -> [(Int, Char)]
-  frequencies = fmap (Foldable.length Arrow.&&& List.head) . List.group . List.sort
-
-  {-|
-    The 'evenParikh' function returns true iff each letter has an even number of
-    occurrences.
-  -}
+  -- Returns true iff each element has an even number of occurrences.
   evenParikh :: String -> Bool
-  evenParikh = Foldable.all (even . Tuple.fst) . frequencies
+  evenParikh = F.all (even . T.fst) . fmap (F.length Arrow.&&& L.head) . L.group . L.sort
 
-  {-|
-    The 'oddParikh' function returns true iff each letter does not have an even number of
-    occurrences.
-  -}
-  oddParikh :: String -> Bool
-  oddParikh = not . evenParikh
+  -- Return true if the input string is a perfect square.
+  perfectSquare :: String -> Bool
+  perfectSquare xs = T.uncurry (==) $ L.splitAt (L.length xs `div` 2) xs
 
-  {-|
-    The 'balancedSplit' function cut a list into two balanced parts. In case the
-    input list has odd length, the first part receives the extra element.
-  -}
-  balancedSplit :: String -> (String, String)
-  balancedSplit xs = List.splitAt (List.length xs `div` 2) xs
+  -- Return true if the input string is a square w.r.t. to the shufle product.
+  shuffleSquare :: String -> Bool
+  shuffleSquare xs = perfectSquare xs || (not . L.null $ shuffleSquareRoots xs)
 
-  {-|
-    The 'square' function returns true if the input list is a square
-    (i.e., the first half list is equal to the second half list).
-  -}
-  isPerfectSquare :: String -> Bool
-  isPerfectSquare xs = even (List.length xs) && Tuple.fst s == Tuple.snd s
-    where
-      s = balancedSplit xs
-
-  {-|
-    The 'isShuffleSquare' function returns true if the input string is a square
-    w.r.t. to the shufle product.
-  -}
-  isShuffleSquare :: String -> Bool
-  isShuffleSquare xs
-    | isPerfectSquare xs = True
-    | otherwise          = not . List.null $ shuffleSquareRoots xs
-
-  {-|
-    The 'shuffleSquareRoots' function returns the list of the shuffle square
-    roots of an input list.
-  -}
+  -- Rreturn all shuffle square roots.
   shuffleSquareRoots :: String -> [String]
   shuffleSquareRoots xs
-    | odd n              = []
-    | oddParikh xs       = []
-    | otherwise          = shuffleSquareRootsAux a n
+    | odd n               = []
+    | not (evenParikh xs) = []
+    | otherwise           = shuffleSquareRoots' a n
     where
-      n = List.length xs
-      a = Array.array (0, n-1) $ List.zip [0..] xs
+      n = L.length xs
+      a = Array.array (0, n-1) $ L.zip [0..] xs
 
-  shuffleSquareRootsAux :: Array.Array Int Char -> Int -> [String]
-  shuffleSquareRootsAux a n = shuffleSquareRootsStep 2 a n t
+  shuffleSquareRoots' :: Array.Array Int Char -> Int -> [String]
+  shuffleSquareRoots' a n = shuffleSquareRootsStep 2 a n t
     where
       a' = Array.array (0, 0) [(0, a Array.! 0)]
-      t  = Array.array (0, 0) [(0, Set.singleton a')]
+      t  = Array.array (0, 0) [(0, S.singleton a')]
 
   shuffleSquareRootsStep :: Int -> Array.Array Int Char -> Int -> DPArray -> [String]
   shuffleSquareRootsStep i a n t
-    | i > n     = fmap Array.elems . Set.toList $ t Array.! (n `div` 2)
+    | i > n     = fmap Array.elems . S.toList $ t Array.! (n `div` 2)
     | otherwise = shuffleSquareRootsStep (i+1) a n t'
     where
       t' = mkArrayshuffleSquareRootsStep i a n t
@@ -127,18 +90,18 @@ where
       ub     = i `div` 2
       assocs = [(j, mkSet j) | j <- [lb..ub]]
 
-      mkSet j = Set.union set1 set2
+      mkSet j = S.union set1 set2
         where
-          set1 = Set.fromList $ mkSetAux1 j
-          set2 = Set.fromList $ mkSetAux2 j
+          set1 = S.fromList $ mkSetAux1 j
+          set2 = S.fromList $ mkSetAux2 j
 
       mkSetAux1 j
-        | j > 0 = [a' | a' <- Set.toList $ t Array.! (j-1)
+        | j > 0 = [a' | a' <- S.toList $ t Array.! (j-1)
                       , a' Array.! (j-1) == a Array.! (i-1)]
         | otherwise = []
 
       mkSetAux2 j
-        | j <= b = [Array.array (lb', ub'+1) assocs | a' <- Set.toList $ t Array.! j
+        | j <= b = [Array.array (lb', ub'+1) assocs | a' <- S.toList $ t Array.! j
                                                     , let (lb', ub') = Array.bounds a'
                                                     , let assoc  = (ub'+1, a Array.! (i-1))
                                                     , let assocs = assoc : Array.assocs a']
@@ -146,67 +109,48 @@ where
         where
           b = min ((i-1) `div` 2) (n `div` 2)
 
-  {-|
-    Backtrack for next word.
-  -}
+  -- Backtrack for next string.
   backward :: Alphabet -> String -> String
-  backward alphabet [] = []
-  backward alphabet (x : xs) =
-    case nextLetter alphabet x of
-      Nothing -> backward alphabet xs
-      Just x' -> x' : xs
+  backward alphabet []       = []
+  backward alphabet (x : xs) = case nextLetter alphabet x of
+                                 Nothing -> backward alphabet xs
+                                 Just x' -> x' : xs
 
-  {-|
-    Forward for next word.
-  -}
+  -- Forward for next string.
   forward :: String -> String
-  forward xs = firstLetter : xs
+  forward xs = firstChar : xs
 
-  -- explore :: Alphabet -> String -> IO ()
-  -- explore alphabet = aux
-  --   where
-  --     aux [] = print "done."
-  --     aux xs =
-  --       if isSquareShuffleFree xs
-  --       then do
-  --         putStrLn $ show (List.length xs) `Monoid.mappend` ": " `Monoid.mappend` show xs
-  --         aux $ forward xs
-  --       else aux $ backward alphabet xs
-  --
-  -- isSquareShuffleFree :: String -> Bool
-  -- isSquareShuffleFree = not . Foldable.any isShuffleSquare . evenLengthPrefixes
-
-  isSquareShuffleFreeF :: Dictionary -> Dictionary -> String -> Message
-  isSquareShuffleFreeF allowed forbidden = isSquareShuffleFreeFAux allowed forbidden . evenLengthPrefixes
-
-  isSquareShuffleFreeFAux :: Dictionary -> Dictionary -> [String] -> Message
-  isSquareShuffleFreeFAux allowed forbidden [] = (True, allowed, forbidden)
-  isSquareShuffleFreeFAux allowed forbidden (p : ps)
-    | Set.member p allowed   = isSquareShuffleFreeFAux allowed forbidden ps
-    | Set.member p forbidden = (False, allowed, forbidden)
-    | isShuffleSquare p      = (False, allowed, Set.insert (List.reverse p) $ Set.insert p forbidden)
-    | otherwise              = isSquareShuffleFreeFAux (Set.insert (List.reverse p) $ Set.insert p allowed) forbidden ps
-
-  exploreF :: Alphabet -> String -> IO ()
-  exploreF alphabet = aux Set.empty Set.empty
+  explore :: Alphabet -> String -> IO ()
+  explore alphabet = aux S.empty S.empty
     where
-      aux _       _         [] = print "done."
-      aux allowed forbidden xs =
-        let (res, allowed', forbidden') = isSquareShuffleFreeF allowed forbidden xs in
-          if res
-          then do
-            putStrLn $ show (List.length xs)      `Monoid.mappend`
-                       ". (allow: "               `Monoid.mappend`
-                       show (Set.size allowed')   `Monoid.mappend`
-                       ", forbidden: "            `Monoid.mappend`
-                       show (Set.size forbidden') `Monoid.mappend`
-                       "):\n"                     `Monoid.mappend`
-                       show xs
-            hFlush stdout
-            aux allowed' forbidden' $ forward xs
-          else aux allowed' forbidden' $ backward alphabet xs
+      aux _       _         []  = error "unexpected empty buffer"
+      aux allowed forbidden xs  =
+        if L.length xs == 1 && xs /= [firstChar]
+        then print "done."
+        else
+          let (res, allowed', forbidden') = explore' allowed forbidden xs in
+            if res
+            then do
+              putStrLn $ show (L.length xs)       `Monoid.mappend`
+                         ". (allow: "             `Monoid.mappend`
+                         show (S.size allowed')   `Monoid.mappend`
+                         ", forbidden: "          `Monoid.mappend`
+                         show (S.size forbidden') `Monoid.mappend`
+                         "):\n"                   `Monoid.mappend`
+                         show xs
+              hFlush stdout
+              aux allowed' forbidden' $ forward xs
+            else aux allowed' forbidden' $ backward alphabet xs
+
+  explore' :: Dictionary -> Dictionary -> String -> Message
+  explore' allowed forbidden = aux allowed forbidden . evenPrefixes
+    where
+      aux allowed' forbidden' [] = (True, allowed', forbidden')
+      aux allowed' forbidden' (p : ps)
+        | S.member p allowed'   = aux allowed' forbidden' ps
+        | S.member p forbidden' = (False, allowed', forbidden')
+        | shuffleSquare p       = (False, allowed', S.insert (L.reverse p) $ S.insert p forbidden')
+        | otherwise             = aux (S.insert (L.reverse p) $ S.insert p allowed') forbidden' ps
 
   main :: IO ()
-  main = do
-    let axiom = "a"
-    exploreF (mkAlphabet 4) axiom
+  main = let axiom = "a" in explore (mkAlphabet 4) axiom
